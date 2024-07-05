@@ -1,0 +1,22 @@
+<div class="is-intersecting" appObserveElement rootMargin="70px" #intersection="intersection">
+    <div class="container">
+        @if (this.getScreenWidth > 800) {
+        <div class="box">
+            <button onclick="location.href='#main'">Início</button>
+            <button onclick="location.href='#about-me'">Sobre mim</button>
+            <button onclick="location.href='#projects'">Projetos</button>
+            <button>Contato</button>
+        </div>
+        } @else {
+        <details [open]="isMenuOpen">
+            <summary class="box" (click)="this.isMenuOpen = !this.isMenuOpen"><mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon></summary>
+            <div class="list">
+                <button onclick="location.href='#main'">Início</button>
+                <button onclick="location.href='#about-me'">Sobre mim</button>
+                <button onclick="location.href='#projects'">Projetos</button>
+                <button>Contato</button>
+            </div>
+        </details>
+        }
+    </div>
+</div>

@@ -1,0 +1,8 @@
+mat-grid-tile {
+    transition: 0.5s ease-in-out;
+    scroll-snap-align: center;
+}
+
+mat-grid-tile.is-intersecting {
+    background-color: rgb(156, 161, 177);
+}

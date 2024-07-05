@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<mat-grid-list cols="8" gutterSize="0" rowHeight="100px">
+    <mat-grid-tile id="main" class="main" appObserveElement rootMargin="170px" #intersection="intersection"
+        [colspan]="8" [rowspan]="8">
+        <div>Inicio</div>
+    </mat-grid-tile>
+
+    <mat-grid-tile id="about-me" class="about-me" appObserveElement rootMargin="150px" #intersection="intersection"
+        [colspan]="8" [rowspan]="8">
+        Sobre mim
+    </mat-grid-tile>
+
+    <mat-grid-tile id="projects" class="projects" appObserveElement rootMargin="150px" #intersection="intersection"
+        [colspan]="8" [rowspan]="8">
+        Projetos
+    </mat-grid-tile>
+
+    <mat-grid-tile id="footer" class="footer" appObserveElement rootMargin="150px" #intersection="intersection"
+        [colspan]="8" [rowspan]="6">
+        Rodapé
+    </mat-grid-tile>
+</mat-grid-list>

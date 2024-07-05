@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 500 1em "Fira Sans", sans-serif;
+}
+
+html,
+body {
+    scroll-snap-type: y proximity;
+    background-color: rgb(190, 193, 202);
+}
+
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(34, 34, 34);
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(223, 223, 223);
+    border-radius: 5px;
+}
