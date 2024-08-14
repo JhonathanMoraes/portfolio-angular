@@ -1,19 +1,21 @@
-import { AfterViewInit, Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import { ObserveElementDirective } from '../../directives/observe-element.directive'
 import { isPlatformBrowser } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-navbar',
   standalone: true,
-  imports: [ObserveElementDirective, MatSidenavModule, MatIconModule],
+  imports: [ObserveElementDirective, MatSidenavModule, MatIconModule, MatExpansionModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements AfterViewInit {
-  getScreenWidth!: number;
-  getScreenHeight!: number;
+  getScreenWidth: number = 0;
+  getScreenHeight: number = 0;
 
   isMenuOpen: boolean = false
 
@@ -31,8 +33,13 @@ export class NavbarComponent implements AfterViewInit {
     this.getScreenWidth = window.innerWidth;
     this.getScreenHeight = window.innerHeight;
 
-    if (this.getScreenWidth > 900) { 
+    if (this.getScreenWidth > 800) {
       this.isMenuOpen = false;
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.isMenuOpen = false;
   }
 }

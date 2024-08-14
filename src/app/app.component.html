@@ -1,23 +1,42 @@
-<app-navbar></app-navbar>
-
-<mat-grid-list cols="8" gutterSize="0" rowHeight="100px">
-    <mat-grid-tile id="main" class="main" appObserveElement rootMargin="170px" #intersection="intersection"
-        [colspan]="8" [rowspan]="8">
-        <div>Inicio</div>
+<mat-grid-list cols="12" gutterSize="0" rowHeight="100px">
+    <mat-grid-tile class="sidebar" [colspan]="1" [rowspan]="31"></mat-grid-tile>
+    <mat-grid-tile [colspan]="0" [rowspan]="0">
+        <app-navbar></app-navbar>
     </mat-grid-tile>
 
-    <mat-grid-tile id="about-me" class="about-me" appObserveElement rootMargin="150px" #intersection="intersection"
-        [colspan]="8" [rowspan]="8">
-        Sobre mim
+    <mat-grid-tile id="main" class="main" appObserveElement [threshold]="0.75" #intersection="intersection"
+        [colspan]="11" [rowspan]="7">
+        <div class="content">
+            <h1 class="title">Desenvolvedor Web</h1>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="text">Esse, quos omnis ipsa voluptatum quia quisquam, veniam obcaecati repudiandae laboriosam
+                velit officiis
+                commodi veritatis? Autem, assumenda totam. Quidem necessitatibus autem dolores!</p>
+            <mat-icon class="main-icon">arrow_downward</mat-icon>
+        </div>
     </mat-grid-tile>
 
-    <mat-grid-tile id="projects" class="projects" appObserveElement rootMargin="150px" #intersection="intersection"
-        [colspan]="8" [rowspan]="8">
-        Projetos
+    <mat-grid-tile id="about-me" appObserveElement [threshold]="0.75" #intersection="intersection" [colspan]="11"
+        [rowspan]="8">
+        <div class="content">
+            <h2 class="subtitle">Sobre mim</h2>
+        </div>
     </mat-grid-tile>
 
-    <mat-grid-tile id="footer" class="footer" appObserveElement rootMargin="150px" #intersection="intersection"
-        [colspan]="8" [rowspan]="6">
-        Rodapé
+    <mat-grid-tile id="projects" class="projects" appObserveElement [threshold]="0.5" #intersection="intersection"
+        [colspan]="11" [rowspan]="10">
+        <div class="content">
+            <h2 class="subtitle">Projetos</h2>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eos in a nulla. Aliquid,
+                praesentium voluptatum necessitatibus itaque eum dolores maiores quisquam illum totam facilis.</p>
+            <app-card-carousel></app-card-carousel>
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile id="contact" class="contact" appObserveElement [threshold]="0.75" #intersection="intersection" [colspan]="11"
+        [rowspan]="6">
+        <div class="content">
+            Rodapé
+        </div>
     </mat-grid-tile>
 </mat-grid-list>

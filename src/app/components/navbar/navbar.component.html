@@ -1,22 +1,33 @@
 <div class="is-intersecting" appObserveElement rootMargin="70px" #intersection="intersection">
-    <div class="container">
+    <nav class="container">
         @if (this.getScreenWidth > 800) {
-        <div class="box">
-            <button onclick="location.href='#main'">Início</button>
-            <button onclick="location.href='#about-me'">Sobre mim</button>
-            <button onclick="location.href='#projects'">Projetos</button>
-            <button>Contato</button>
-        </div>
+        <ul class="box">
+            <li>
+                <a href="#main">Início</a>
+            </li>
+            <li>
+                <a href="#about-me">Sobre mim</a>
+            </li>
+            <li>
+                <a href="#projects">Projetos</a>
+            </li>
+            <li>
+                <a href="#contact">Contato</a>
+            </li>
+        </ul>
         } @else {
-        <details [open]="isMenuOpen">
-            <summary class="box" (click)="this.isMenuOpen = !this.isMenuOpen"><mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon></summary>
-            <div class="list">
-                <button onclick="location.href='#main'">Início</button>
-                <button onclick="location.href='#about-me'">Sobre mim</button>
-                <button onclick="location.href='#projects'">Projetos</button>
-                <button>Contato</button>
-            </div>
-        </details>
+        <mat-accordion displayMode="default">
+            <mat-expansion-panel hideToggle #panel="matExpansionPanel" [expanded]="isMenuOpen"
+                (opened)="isMenuOpen = true" (closed)="isMenuOpen = false">
+                <mat-expansion-panel-header collapsedHeight="4rem">
+                    <mat-icon>{{ isMenuOpen ? 'close': 'menu' }}</mat-icon>
+                </mat-expansion-panel-header>
+                <a href="#main">Início</a>
+                <a href="#about-me">Sobre mim</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
+            </mat-expansion-panel>
+        </mat-accordion>
         }
-    </div>
+    </nav>
 </div>

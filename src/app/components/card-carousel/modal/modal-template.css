@@ -1,0 +1,25 @@
+mat-dialog-actions {
+    justify-content: space-between;
+}
+
+mat-icon {
+    cursor: pointer;
+    transition: opacity .3s ease-in-out;
+}
+mat-icon:hover {
+    opacity: .5;
+}
+
+.button {
+    border: 1px solid #1f1f1f;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 45px;
+    transition: .3s ease-in-out;
+}
+
+.button:hover {
+    color: white;
+    background-color: #1f1f1f;
+}
